@@ -492,7 +492,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    *
    * @default auto-detect based on the dependencies
    */
-  vue?: boolean | OptionsVue
+  vue?: boolean | (OptionsVue & OptionsFiles)
 
   /**
    * Enable JSONC support.
@@ -526,7 +526,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    *
    * @default false
    */
-  astro?: boolean | OptionsOverrides
+  astro?: boolean | (OptionsOverrides & OptionsFiles)
 
   /**
    * Enable Angular support.
@@ -595,7 +595,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    *
    * @default false
    */
-  react?: boolean | OptionsReact
+  react?: boolean | (OptionsReact & OptionsFiles)
 
   /**
    * Enable nextjs rules.
@@ -605,7 +605,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    *
    * @default false
    */
-  nextjs?: boolean | OptionsOverrides
+  nextjs?: boolean | (OptionsOverrides & OptionsFiles)
 
   /**
    * Enable solid rules.
@@ -615,7 +615,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    *
    * @default false
    */
-  solid?: boolean | OptionsOverrides
+  solid?: boolean | (OptionsOverrides & OptionsFiles)
 
   /**
    * Enable svelte rules.
@@ -625,7 +625,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    *
    * @default false
    */
-  svelte?: boolean | OptionsOverrides
+  svelte?: boolean | (OptionsOverrides & OptionsFiles)
 
   /**
    * Enable unocss rules.
