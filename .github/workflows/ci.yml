@@ -75,8 +75,8 @@ jobs:
       - name: '#671 check with svelte-eslint-parser 1.1.0 (expected to fail)'
         if: matrix.os == 'ubuntu-latest'
         continue-on-error: true
-        run: pnpm add -D svelte-eslint-parser@1.1.0 && npx vitest run --reporter verbose tmp-671
+        run: pnpm add -D svelte-eslint-parser@1.1.0 && CHECK_671=1 npx vitest run --reporter verbose tmp-671
 
       - name: '#671 check with svelte-eslint-parser 1.1.1'
         if: matrix.os == 'ubuntu-latest'
-        run: pnpm add -D svelte-eslint-parser@1.1.1 && npx vitest run --reporter verbose tmp-671
+        run: pnpm add -D svelte-eslint-parser@1.1.1 && CHECK_671=1 npx vitest run --reporter verbose tmp-671

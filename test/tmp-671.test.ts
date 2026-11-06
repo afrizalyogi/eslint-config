@@ -3,7 +3,7 @@ import { expect, it } from 'vitest'
 import { antfu } from '../src'
 
 // temporary check for #671, not for upstream
-it('svelte 5 $props does not report errors', async () => {
+it.runIf(process.env.CHECK_671)('svelte 5 $props does not report errors', async () => {
   const configs = await antfu({
     svelte: true,
     typescript: true,
@@ -15,7 +15,7 @@ it('svelte 5 $props does not report errors', async () => {
     overrideConfig: configs as any,
   })
   const code = [
-    '<script lang="ts">',
+    "<script lang='ts'>",
     '  interface Props { name: string }',
     '  const props: Props = $props()',
     '  const { name } = $props()',
@@ -28,5 +28,5 @@ it('svelte 5 $props does not report errors', async () => {
   const parser = await import('svelte-eslint-parser/package.json', { with: { type: 'json' } })
   console.log('svelte-eslint-parser', parser.default.version)
   console.log(JSON.stringify(result.messages.map(m => [m.ruleId, m.severity, m.message])))
-  expect(result.messages.filter(m => m.fatal || m.ruleId?.startsWith('svelte/') || m.ruleId === null)).toEqual([])
+  expect(result.messages).toEqual([])
 })
