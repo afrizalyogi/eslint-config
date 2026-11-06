@@ -312,7 +312,6 @@ export function antfu(
   if (enableNextjs) {
     configs.push(
       nextjs({
-        ...resolveSubOptions(options, 'nextjs'),
         overrides: getOverrides(options, 'nextjs'),
       }),
     )
@@ -321,7 +320,6 @@ export function antfu(
   if (enableSolid) {
     configs.push(
       solid({
-        ...resolveSubOptions(options, 'solid'),
         overrides: getOverrides(options, 'solid'),
         tsconfigPath,
         typescript: !!enableTypeScript,
@@ -332,7 +330,6 @@ export function antfu(
   if (enableSvelte) {
     configs.push(
       svelte({
-        ...resolveSubOptions(options, 'svelte'),
         overrides: getOverrides(options, 'svelte'),
         stylistic: stylisticOptions,
         typescript: !!enableTypeScript,
@@ -352,7 +349,6 @@ export function antfu(
   if (enableAstro) {
     configs.push(
       astro({
-        ...resolveSubOptions(options, 'astro'),
         overrides: getOverrides(options, 'astro'),
         stylistic: stylisticOptions,
       }),
