@@ -17,7 +17,9 @@ jobs:
       - run: npm i -g @antfu/ni
       - run: nci
       - run: nr build
-      - run: npx vitest run -u test/factory-snap.test.ts test/api.test.ts
+      - run: npx vitest run -u --reporter verbose factory
+      - run: npx vitest run -u --reporter verbose api
+      - run: npx vitest run --reporter verbose factory api
       - run: git status --short && git diff --stat && git diff -- test/__snapshots__/api
       - uses: actions/upload-artifact@v4
         with:
