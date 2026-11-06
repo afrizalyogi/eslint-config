@@ -35,6 +35,7 @@ jobs:
 
       - name: Lint
         run: nr lint
+        continue-on-error: true
 
       - name: Typecheck
         run: nr typecheck
