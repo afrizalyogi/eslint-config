@@ -60,6 +60,30 @@ const suites: Suite[] = [
       type: 'lib',
     },
   },
+  {
+    name: 'framework-files',
+    configs: {
+      ...CONFIG_PRESET_FULL_OFF,
+      astro: {
+        files: ['apps/astro/**/*.astro'],
+      },
+      nextjs: {
+        files: ['apps/next/**/*.tsx'],
+      },
+      react: {
+        files: ['apps/react/**/*.tsx'],
+      },
+      solid: {
+        files: ['apps/solid/**/*.tsx'],
+      },
+      svelte: {
+        files: ['apps/svelte/**/*.svelte'],
+      },
+      vue: {
+        files: ['apps/vue/**/*.vue'],
+      },
+    },
+  },
 ]
 
 const ignoreConfigs: string[] = [
